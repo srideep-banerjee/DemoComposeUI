@@ -1,5 +1,6 @@
 package com.example.blackofferassignment.view.explore
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -25,12 +26,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import coil.compose.AsyncImage
 import com.example.blackofferassignment.R
 
 @Composable
@@ -155,11 +156,10 @@ fun RowScope.ExploreItemCard(exploreItemData: ExploreItemData, imageNXOffset: Dp
 
 @Composable
 fun BoxScope.ExploreItemImage(imageSize: Dp) {
-    AsyncImage(
-        model = R.drawable.demo,
+    Image(
+        bitmap = ImageBitmap.imageResource(id = R.drawable.demo),
         contentScale = ContentScale.Crop,
         contentDescription = "Profile Picture",
-        placeholder = painterResource(id = R.drawable.baseline_image_24),
         modifier = Modifier
             .align(Alignment.TopStart)
             .padding(top = 24.dp)
